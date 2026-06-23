@@ -91,7 +91,7 @@
 
       <!-- BOTÃO WHATSAPP CONTATO -->
       <div class="flex items-center space-x-4">
-        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+r%C3%A1pido+para+o+meu+aparelho." target="_blank" 
+        <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+r%C3%A1pido+para+o+meu+aparelho." target="_blank" 
            class="hidden sm:flex items-center space-x-2 bg-gradient-to-r from-neonOrange to-orange-500 text-white font-bold px-5 py-2.5 rounded-lg hover:shadow-neon-orange transition-all duration-300 transform hover:-translate-y-0.5">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span>SUPORTE RÁPIDO</span>
@@ -111,7 +111,7 @@
       <a href="#acessorios" class="block py-2 text-sm font-semibold hover:text-neonBlue">Acessórios</a>
       <a href="#futuro" class="block py-2 text-sm font-semibold hover:text-neonBlue">Expansão</a>
       <a href="#contato" class="block py-2 text-sm font-semibold hover:text-neonBlue">Contato</a>
-      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+r%C3%A1pido." target="_blank" 
+      <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+r%C3%A1pido." target="_blank" 
          class="flex items-center justify-center space-x-2 bg-gradient-to-r from-neonOrange to-orange-500 text-white font-bold py-2.5 rounded-lg">
         <i class="fa-brands fa-whatsapp"></i>
         <span>FALAR NO WHATSAPP</span>
@@ -383,7 +383,7 @@
             <p class="text-gray-400 text-sm">Proteção reforçada de ponta a ponta para a tela do seu celular contra quedas severas.</p>
             <div class="flex items-center justify-between pt-4">
               <span class="text-2xl font-bold font-tech text-white">R$ 35,00</span>
-              <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Tenho+interesse+nas+pel%C3%ADculas+premium." target="_blank" class="bg-neonBlue/10 text-neonBlue hover:bg-neonBlue hover:text-black p-2 rounded-lg transition duration-300">
+              <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Tenho+interesse+nas+pel%C3%ADculas+premium." target="_blank" class="bg-neonBlue/10 text-neonBlue hover:bg-neonBlue hover:text-black p-2 rounded-lg transition duration-300">
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </div>
@@ -401,7 +401,7 @@
             <p class="text-gray-400 text-sm">Carregadores homologados e seguros que garantem carga super veloz sem danificar a saúde da sua bateria.</p>
             <div class="flex items-center justify-between pt-4">
               <span class="text-2xl font-bold font-tech text-white">R$ 89,90</span>
-              <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Gostaria+de+um+carregador+turbo+de+20W." target="_blank" class="bg-neonOrange/10 text-neonOrange hover:bg-neonOrange hover:text-black p-2 rounded-lg transition duration-300">
+              <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+um+carregador+turbo+de+20W." target="_blank" class="bg-neonOrange/10 text-neonOrange hover:bg-neonOrange hover:text-black p-2 rounded-lg transition duration-300">
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </div>
@@ -419,7 +419,7 @@
             <p class="text-gray-400 text-sm">Capas de alta proteção com amortecedores de impacto nos cantos para todos os modelos de celular.</p>
             <div class="flex items-center justify-between pt-4">
               <span class="text-2xl font-bold font-tech text-white">R$ 49,90</span>
-              <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Gostaria+de+ver+as+capinhas+antimpacto." target="_blank" class="bg-neonBlue/10 text-neonBlue hover:bg-neonBlue hover:text-black p-2 rounded-lg transition duration-300">
+              <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+ver+as+capinhas+antimpacto." target="_blank" class="bg-neonBlue/10 text-neonBlue hover:bg-neonBlue hover:text-black p-2 rounded-lg transition duration-300">
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </div>
@@ -490,7 +490,7 @@
           <div class="flex space-x-4 text-xl">
             <a href="#" class="text-gray-400 hover:text-neonBlue transition"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" class="text-gray-400 hover:text-neonBlue transition"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://wa.me/5500000000000" class="text-gray-400 hover:text-neonOrange transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/5511987654321" class="text-gray-400 hover:text-neonOrange transition"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -500,7 +500,7 @@
           <ul class="space-y-3 text-sm text-gray-400">
             <li class="flex items-center space-x-3">
               <i class="fa-solid fa-phone text-neonBlue"></i>
-              <span>(00) 00000-0000</span>
+              <span>(11) 98765-4321</span>
             </li>
             <li class="flex items-center space-x-3">
               <i class="fa-solid fa-envelope text-neonOrange"></i>
@@ -517,7 +517,8 @@
         <div class="space-y-4">
           <h4 class="font-tech text-lg font-bold tracking-wider text-white">ATENDIMENTO LOCAL</h4>
           <p class="text-sm text-gray-400">
-            Seu endereço aqui<br>
+            Rua da Tecnologia, 123 - Centro<br>
+            Cidade Tecnológica - SP<br>
             CEP: 01001-000
           </p>
           <div class="bg-black/40 border border-gray-800 p-4 rounded-xl text-xs text-center text-neonBlue font-semibold tracking-wider">
@@ -536,7 +537,7 @@
   </footer>
 
   <!-- BOTÃO FIXO DO WHATSAPP -->
-  <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Vim+do+site+e+gostaria+de+fazer+um+or%C3%A7amento." target="_blank" 
+  <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Vim+do+site+e+gostaria+de+fazer+um+or%C3%A7amento." target="_blank" 
      class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25d366] text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition duration-300">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
@@ -603,7 +604,7 @@
       const encodedMessage = encodeURIComponent(messageText);
       
       // Abre o WhatsApp
-      window.open(`https://wa.me/5500000000000?text=${encodedMessage}`, '_blank');
+      window.open(`https://wa.me/5511987654321?text=${encodedMessage}`, '_blank');
     });
 
     // Calcula inicialmente ao carregar a página
