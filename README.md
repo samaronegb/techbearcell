@@ -1,4 +1,3 @@
-[site_tech_bear_cell.html](https://github.com/user-attachments/files/29269851/site_tech_bear_cell.html)
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
