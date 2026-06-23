@@ -500,7 +500,7 @@
           <ul class="space-y-3 text-sm text-gray-400">
             <li class="flex items-center space-x-3">
               <i class="fa-solid fa-phone text-neonBlue"></i>
-              <span>(11) 98765-4321</span>
+              <span>(00) 00000-0000</span>
             </li>
             <li class="flex items-center space-x-3">
               <i class="fa-solid fa-envelope text-neonOrange"></i>
@@ -517,8 +517,7 @@
         <div class="space-y-4">
           <h4 class="font-tech text-lg font-bold tracking-wider text-white">ATENDIMENTO LOCAL</h4>
           <p class="text-sm text-gray-400">
-            Rua da Tecnologia, 123 - Centro<br>
-            Cidade Tecnológica - SP<br>
+            Seu endereço aqui<br>
             CEP: 01001-000
           </p>
           <div class="bg-black/40 border border-gray-800 p-4 rounded-xl text-xs text-center text-neonBlue font-semibold tracking-wider">
