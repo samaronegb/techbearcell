@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Bear Cell - Assistência Técnica Especializada</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            techDark: '#0a0f1d',
+            techCard: '#111827',
+            neonBlue: '#00f0ff',
+            neonOrange: '#ff6b00',
+          },
+          boxShadow: {
+            'neon-blue': '0 0 15px rgba(0, 240, 255, 0.3)',
+            'neon-orange': '0 0 15px rgba(255, 107, 0, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background-color: #050811;
+    }
+    .font-tech {
+      font-family: 'Orbitron', sans-serif;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #00f0ff); }
+      50% { opacity: 1; filter: drop-shadow(0 0 15px #00f0ff); }
+    }
+    .animate-glow {
+      animation: pulse-glow 2s infinite;
+    }
+  </style>
+</head>
+<body class="text-gray-100 overflow-x-hidden">
+
+  <!-- CABEÇALHO -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-techDark/90 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGÓTIPO -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-12 h-12 rounded-full border-2 border-neonBlue flex items-center justify-center bg-black/40 p-1 overflow-hidden">
+          <img src="tech bear.png" alt="Tech Bear Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="hidden w-full h-full items-center justify-center text-neonBlue">
+            <i class="fa-solid fa-paw text-xl"></i>
+          </div>
+        </div>
+        <div>
+          <span class="font-tech text-lg sm:text-xl font-black tracking-widest text-white block leading-none">
+            TECH BEAR
+          </span>
+          <span class="text-xs font-semibold text-neonOrange tracking-[0.25em] block mt-0.5">
+            CELL
+          </span>
+        </div>
+      </a>
+
+      <!-- MENU COMPUTADOR -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider uppercase">
+        <a href="#servicos" class="hover:text-neonBlue transition duration-300">Serviços</a>
+        <a href="#orcamento" class="hover:text-neonBlue transition duration-300">Simulador</a>
+        <a href="#acessorios" class="hover:text-neonBlue transition duration-300">Acessórios</a>
+        <a href="#futuro" class="hover:text-neonBlue transition duration-300">Expansão</a>
+        <a href="#contato" class="hover:text-neonBlue transition duration-300">Contato</a>
+      </nav>
+
+      <!-- BOTÃO CONTACTO WHATSAPP -->
+      <div class="flex items-center space-x-4">
+        <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+r%C3%A1pido+para+o+meu+aparelho." target="_blank" 
+           class="hidden sm:flex items-center space-x-2 bg-gradient-to-r from-neonOrange to-orange-500 text-white font-bold px-5 py-2.5 rounded-lg hover:shadow-neon-orange transition-all duration-300 transform hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>SUPORTE RÁPIDO</span>
+        </a>
+        
+        <!-- MENU MOBILE BOTÃO -->
+        <button id="mobileMenuBtn" class="md:hidden text-white hover:text-neonBlue focus:outline-none">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- LISTA MENU TELEMÓVEL -->
+    <div id="mobileMenu" class="hidden md:hidden bg-techDark border-b border-gray-800 px-4 py-4 space-y-3">
+      <a href="#servicos" class="block py-2 text-sm font-semibold hover:text-neonBlue">Serviços</a>
+      <a href="#orcamento" class="block py-2 text-sm font-semibold hover:text-neonBlue">Simulador de Orçamento</a>
+      <a href="#acessorios" class="block py-2 text-sm font-semibold hover:text-neonBlue">Acessórios</a>
+      <a href="#futuro" class="block py-2 text-sm font-semibold hover:text-neonBlue">Expansão</a>
+      <a href="#contato" class="block py-2 text-sm font-semibold hover:text-neonBlue">Contato</a>
+      <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+r%C3%A1pido." target="_blank" 
+         class="flex items-center justify-center space-x-2 bg-gradient-to-r from-neonOrange to-orange-500 text-white font-bold py-2.5 rounded-lg">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>FALAR NO WHATSAPP</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- SECÇÃO DE DESTAQUE -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex items-center">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,240,255,0.08),transparent_60%)]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- TEXTO DE DESTAQUE -->
+        <div class="space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center space-x-2 bg-neonBlue/10 border border-neonBlue/30 px-3 py-1.5 rounded-full text-neonBlue text-sm font-semibold tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-neonBlue animate-pulse"></span>
+            <span>O Urso da Tecnologia Chegou!</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+            Seu Celular Quebrou?<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-teal-400">O Tech Bear Resolve!</span>
+          </h1>
+          <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+            Assistência técnica ultra rápida, transparente e de alta qualidade. Trocamos sua tela quebrada, bateria viciada ou conector de carga no mesmo dia!
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a href="#orcamento" class="bg-gradient-to-r from-neonBlue to-cyan-500 text-black font-extrabold px-8 py-4 rounded-xl shadow-neon-blue hover:scale-105 transition duration-300">
+              SIMULAR ORÇAMENTO <i class="fa-solid fa-calculator ml-2"></i>
+            </a>
+            <a href="#servicos" class="border-2 border-gray-700 hover:border-neonBlue text-white font-bold px-8 py-4 rounded-xl transition duration-300">
+              VER SERVIÇOS
+            </a>
+          </div>
+        </div>
+
+        <!-- MASCOTE URSO (Vetor SVG Animado do Urso) -->
+        <div class="flex justify-center items-center">
+          <div class="relative w-72 h-72 sm:w-96 sm:h-96 animate-float">
+            <!-- Glow de fundo -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-neonBlue/20 to-neonOrange/20 blur-3xl"></div>
+            
+            <!-- SVG Vetorial do Urso da Logo -->
+            <svg class="w-full h-full relative z-10" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Escudo Hexagonal Interno -->
+              <polygon points="250,50 420,120 420,380 250,450 80,380 80,120" fill="#0c1328" stroke="#00f0ff" stroke-width="8" stroke-linejoin="round" />
+              <polygon points="250,65 400,130 400,370 250,435 100,370 100,130" fill="none" stroke="#ff6b00" stroke-width="3" stroke-dasharray="10 5" />
+              
+              <!-- Circuitos à Esquerda -->
+              <path d="M 60,180 L 120,180 L 140,200" stroke="#00f0ff" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="60" cy="180" r="6" fill="#00f0ff" />
+              <path d="M 50,250 L 100,250 L 115,235" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" />
+              <circle cx="50" cy="250" r="6" fill="#00f0ff" />
+              
+              <!-- Circuitos à Direita -->
+              <path d="M 440,220 L 380,220 L 360,240" stroke="#ff6b00" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="440" cy="220" r="6" fill="#ff6b00" />
+              <path d="M 450,290 L 400,290 L 385,275" stroke="#ff6b00" stroke-width="4" stroke-linecap="round" />
+              <circle cx="450" cy="290" r="6" fill="#ff6b00" />
+
+              <!-- Urso Robusto -->
+              <!-- Orelhas -->
+              <circle cx="170" cy="180" r="35" fill="#5c4033" stroke="#2b1d16" stroke-width="6"/>
+              <circle cx="170" cy="180" r="18" fill="#a0705a" />
+              <circle cx="330" cy="180" r="35" fill="#5c4033" stroke="#2b1d16" stroke-width="6"/>
+              <circle cx="330" cy="180" r="18" fill="#a0705a" />
+
+              <!-- Cabeça -->
+              <circle cx="250" cy="240" r="100" fill="#6f4e37" stroke="#2b1d16" stroke-width="8"/>
+              
+              <!-- Óculos Cyberpunk -->
+              <rect class="animate-glow" x="160" y="200" width="180" height="40" rx="10" fill="#00f0ff" stroke="#ffffff" stroke-width="4" />
+              <line class="animate-glow" x1="160" y1="220" x2="340" y2="220" stroke="#ffffff" stroke-width="3" />
+              <rect x="235" y="193" width="30" height="8" rx="2" fill="#ff6b00" />
+              
+              <!-- Focinho -->
+              <ellipse cx="250" cy="275" rx="35" ry="25" fill="#d2b48c" stroke="#2b1d16" stroke-width="5" />
+              <polygon points="235,265 265,265 250,280" fill="#2b1d16" />
+              <path d="M 250,280 L 250,295 C 240,295 235,290 235,290 M 250,295 C 260,295 265,290 265,290" stroke="#2b1d16" stroke-width="4" stroke-linecap="round"/>
+
+              <!-- Patas e Corpo -->
+              <!-- Ombro Esquerdo -->
+              <path d="M 150,330 C 130,360 120,400 130,440" stroke="#2b1d16" stroke-width="12" stroke-linecap="round" />
+              <!-- Ombro Direito segurando o celular -->
+              <path d="M 350,330 C 370,360 380,400 370,440" stroke="#2b1d16" stroke-width="12" stroke-linecap="round" />
+
+              <!-- Celular Tecnológico na Mão Direita -->
+              <g transform="translate(320, 310) rotate(15)">
+                <rect x="0" y="0" width="60" height="110" rx="8" fill="#111827" stroke="#00f0ff" stroke-width="5" />
+                <rect x="5" y="10" width="50" height="90" rx="4" fill="#0c1328" />
+                <!-- Engrenagem na tela -->
+                <circle cx="30" cy="55" r="15" stroke="#ff6b00" stroke-width="3" fill="none" stroke-dasharray="6 3" class="animate-spin" style="transform-origin: 30px 55px; animation-duration: 6s;"/>
+                <circle cx="30" cy="55" r="8" fill="#ff6b00" />
+              </g>
+
+              <!-- Ferramenta de Reparo na Mão Esquerda (Chave de fenda) -->
+              <g transform="translate(140, 360) rotate(-45)">
+                <rect x="-10" y="0" width="20" height="50" rx="5" fill="#ff6b00" stroke="#2b1d16" stroke-width="3" />
+                <rect x="-3" y="-35" width="6" height="35" fill="#cbd5e1" />
+                <rect x="-5" y="-40" width="10" height="5" fill="#94a3b8" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECÇÃO DE SERVIÇOS -->
+  <section id="servicos" class="py-24 bg-techDark relative border-t border-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black font-tech tracking-widest text-white">NOSSOS SERVIÇOS</h2>
+        <div class="w-24 h-1 bg-neonBlue mx-auto"></div>
+        <p class="text-gray-400 max-w-xl mx-auto">Soluções rápidas e eficientes para manter você sempre conectado.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- CARTÃO 1 -->
+        <div class="bg-techCard border border-gray-800 p-8 rounded-2xl hover:border-neonBlue transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-neonBlue/10 flex items-center justify-center text-neonBlue text-2xl">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-wide">TROCA DE TELA</h3>
+            <p class="text-gray-400 text-sm">Trabalhamos com telas premium e originais. Seu celular com cores brilhantes e touch perfeito novamente.</p>
+          </div>
+          <span class="text-xs text-neonBlue font-semibold mt-6 tracking-widest uppercase">Garantia de 90 dias</span>
+        </div>
+
+        <!-- CARTÃO 2 -->
+        <div class="bg-techCard border border-gray-800 p-8 rounded-2xl hover:border-neonOrange transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-neonOrange/10 flex items-center justify-center text-neonOrange text-2xl">
+              <i class="fa-solid fa-battery-three-quarters"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-wide">TROCA DE BATERIA</h3>
+            <p class="text-gray-400 text-sm">Bateria descarregando rápido? Substituímos por baterias homologadas de longa durabilidade.</p>
+          </div>
+          <span class="text-xs text-neonOrange font-semibold mt-6 tracking-widest uppercase">Saúde em 100%</span>
+        </div>
+
+        <!-- CARTÃO 3 -->
+        <div class="bg-techCard border border-gray-800 p-8 rounded-2xl hover:border-neonBlue transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-neonBlue/10 flex items-center justify-center text-neonBlue text-2xl">
+              <i class="fa-solid fa-plug"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-wide">CONECTOR DE CARGA</h3>
+            <p class="text-gray-400 text-sm">Mal contato para carregar? Fazemos a limpeza técnica ou substituição do conector de carga.</p>
+          </div>
+          <span class="text-xs text-neonBlue font-semibold mt-6 tracking-widest uppercase">Carregamento Rápido</span>
+        </div>
+
+        <!-- CARTÃO 4 -->
+        <div class="bg-techCard border border-gray-800 p-8 rounded-2xl hover:border-neonOrange transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-neonOrange/10 flex items-center justify-center text-neonOrange text-2xl">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3 class="text-xl font-bold tracking-wide">REPAROS PLACA</h3>
+            <p class="text-gray-400 text-sm">Seu celular não liga mais ou molhou? Dispomos de solda de precisão para microsoldagem em placas.</p>
+          </div>
+          <span class="text-xs text-neonOrange font-semibold mt-6 tracking-widest uppercase">Equipamento Avançado</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECÇÃO SIMULADOR DE ORÇAMENTO -->
+  <section id="orcamento" class="py-24 bg-black/40 relative">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,107,0,0.05),transparent_50%)]"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black font-tech tracking-widest text-white">SIMULADOR DE ORÇAMENTO</h2>
+        <div class="w-24 h-1 bg-neonOrange mx-auto"></div>
+        <p class="text-gray-400 max-w-xl mx-auto">Selecione as opções do seu aparelho e veja uma estimativa de preço instantaneamente!</p>
+      </div>
+
+      <!-- PAINEL INTERATIVO -->
+      <div class="bg-techCard border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-neon-blue">
+        <form id="simulatorForm" class="space-y-8">
+          
+          <!-- MARCA DO APARELHO -->
+          <div class="space-y-3">
+            <label class="text-lg font-bold tracking-wider text-neonBlue uppercase block"><i class="fa-solid fa-tag mr-2"></i> Marca do Celular</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <label class="cursor-pointer border-2 border-gray-800 rounded-xl p-4 flex flex-col items-center justify-center space-y-2 bg-black/20 hover:border-neonBlue transition-all">
+                <input type="radio" name="brand" value="Samsung" class="hidden" checked>
+                <i class="fa-solid fa-mobile-button text-2xl text-gray-500"></i>
+                <span class="font-bold text-sm">SAMSUNG</span>
+              </label>
+              <label class="cursor-pointer border-2 border-gray-800 rounded-xl p-4 flex flex-col items-center justify-center space-y-2 bg-black/20 hover:border-neonBlue transition-all">
+                <input type="radio" name="brand" value="Motorola" class="hidden">
+                <i class="fa-solid fa-mobile text-2xl text-gray-500"></i>
+                <span class="font-bold text-sm">MOTOROLA</span>
+              </label>
+              <label class="cursor-pointer border-2 border-gray-800 rounded-xl p-4 flex flex-col items-center justify-center space-y-2 bg-black/20 hover:border-neonBlue transition-all">
+                <input type="radio" name="brand" value="Xiaomi" class="hidden">
+                <i class="fa-solid fa-mobile-retro text-2xl text-gray-500"></i>
+                <span class="font-bold text-sm">XIAOMI</span>
+              </label>
+              <label class="cursor-pointer border-2 border-gray-800 rounded-xl p-4 flex flex-col items-center justify-center space-y-2 bg-black/20 hover:border-neonBlue transition-all">
+                <input type="radio" name="brand" value="iPhone" class="hidden">
+                <i class="fa-brands fa-apple text-2xl text-gray-500"></i>
+                <span class="font-bold text-sm">IPHONE</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- SELEÇÃO DA AVARIA -->
+          <div class="space-y-3">
+            <label class="text-lg font-bold tracking-wider text-neonOrange uppercase block"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Qual o Problema?</label>
+            <select id="problemSelect" class="w-full bg-black/60 border-2 border-gray-800 rounded-xl px-4 py-4 focus:border-neonOrange focus:outline-none text-white font-bold">
+              <option value="tela" data-price-android="249.90" data-price-apple="399.90">Tela Quebrada / Sem Imagem</option>
+              <option value="bateria" data-price-android="119.90" data-price-apple="179.90">Bateria Viciada / Não segura carga</option>
+              <option value="conector" data-price-android="89.90" data-price-apple="129.90">Não liga / Não reconhece carregador</option>
+              <option value="camera" data-price-android="139.90" data-price-apple="199.90">Câmera Embaçada ou Quebrada</option>
+              <option value="limpeza" data-price-android="49.90" data-price-apple="59.90">Limpeza Técnica Interna + Desoxidação</option>
+            </select>
+          </div>
+
+          <!-- VALOR ESTIMADO -->
+          <div class="bg-black/60 rounded-2xl p-6 border border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+              <span class="text-sm font-semibold tracking-widest uppercase text-gray-400">Estimativa do Serviço:</span>
+              <div class="text-4xl font-extrabold text-neonBlue font-tech mt-1" id="estimatedPrice">R$ 249,90</div>
+              <p class="text-xs text-gray-500 mt-2">*O valor final depende do modelo exato após avaliação técnica.</p>
+            </div>
+            
+            <button type="button" id="sendWhatsappBtn" class="w-full sm:w-auto bg-gradient-to-r from-neonOrange to-orange-500 text-white font-extrabold px-8 py-4 rounded-xl shadow-neon-orange flex items-center justify-center space-x-3 hover:scale-105 transition duration-300">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>RESERVAR ESTE REPARO</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECÇÃO DE ACESSÓRIOS -->
+  <section id="acessorios" class="py-24 bg-techDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black font-tech tracking-widest text-white">VITRINE DE ACESSÓRIOS</h2>
+        <div class="w-24 h-1 bg-neonBlue mx-auto"></div>
+        <p class="text-gray-400 max-w-xl mx-auto">Acessórios premium selecionados a dedo para aumentar a segurança e vida útil do seu aparelho.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- PRODUTO 1 -->
+        <div class="bg-techCard border border-gray-800 rounded-2xl overflow-hidden hover:border-neonBlue transition duration-300">
+          <div class="h-48 bg-gradient-to-br from-black/60 to-gray-900 flex items-center justify-center p-6 text-neonBlue relative">
+            <i class="fa-solid fa-shield-halved text-7xl"></i>
+            <span class="absolute top-4 right-4 bg-neonBlue/10 border border-neonBlue text-neonBlue text-xs font-bold px-2 py-1 rounded">PREMIUM</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <h4 class="text-lg font-bold">Películas de Vidro 3D / Cerâmica</h4>
+            <p class="text-gray-400 text-sm">Proteção reforçada de ponta a ponta para a tela do seu celular contra quedas severas.</p>
+            <div class="flex items-center justify-between pt-4">
+              <span class="text-2xl font-bold font-tech text-white">R$ 35,00</span>
+              <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Tenho+interesse+nas+pel%C3%ADculas+premium." target="_blank" class="bg-neonBlue/10 text-neonBlue hover:bg-neonBlue hover:text-black p-2 rounded-lg transition duration-300">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 2 -->
+        <div class="bg-techCard border border-gray-800 rounded-2xl overflow-hidden hover:border-neonOrange transition duration-300">
+          <div class="h-48 bg-gradient-to-br from-black/60 to-gray-900 flex items-center justify-center p-6 text-neonOrange relative">
+            <i class="fa-solid fa-bolt text-7xl"></i>
+            <span class="absolute top-4 right-4 bg-neonOrange/10 border border-neonOrange text-neonOrange text-xs font-bold px-2 py-1 rounded">MUITO RÁPIDO</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <h4 class="text-lg font-bold">Carregadores Rápidos Turbo (20W)</h4>
+            <p class="text-gray-400 text-sm">Carregadores homologados e seguros que garantem carga super veloz sem danificar a saúde da sua bateria.</p>
+            <div class="flex items-center justify-between pt-4">
+              <span class="text-2xl font-bold font-tech text-white">R$ 89,90</span>
+              <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+um+carregador+turbo+de+20W." target="_blank" class="bg-neonOrange/10 text-neonOrange hover:bg-neonOrange hover:text-black p-2 rounded-lg transition duration-300">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 3 -->
+        <div class="bg-techCard border border-gray-800 rounded-2xl overflow-hidden hover:border-neonBlue transition duration-300">
+          <div class="h-48 bg-gradient-to-br from-black/60 to-gray-900 flex items-center justify-center p-6 text-neonBlue relative">
+            <i class="fa-solid fa-mobile text-7xl"></i>
+            <span class="absolute top-4 right-4 bg-neonBlue/10 border border-neonBlue text-neonBlue text-xs font-bold px-2 py-1 rounded">CUPOM ATIVO</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <h4 class="text-lg font-bold">Capinhas Antimpacto</h4>
+            <p class="text-gray-400 text-sm">Capas de alta proteção com amortecedores de impacto nos cantos para todos os modelos de celular.</p>
+            <div class="flex items-center justify-between pt-4">
+              <span class="text-2xl font-bold font-tech text-white">R$ 49,90</span>
+              <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Gostaria+de+ver+as+capinhas+antimpacto." target="_blank" class="bg-neonBlue/10 text-neonBlue hover:bg-neonBlue hover:text-black p-2 rounded-lg transition duration-300">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECÇÃO FUTURO E EXPANSÃO -->
+  <section id="futuro" class="py-24 bg-black/40 relative border-t border-gray-900">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(0,240,255,0.03),transparent_60%)]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black font-tech tracking-widest text-white">LINHA DE EXPANSÃO</h2>
+        <div class="w-24 h-1 bg-neonBlue mx-auto"></div>
+        <p class="text-gray-400 max-w-xl mx-auto">A Tech Bear cresce para te atender cada vez melhor. Veja o que chega em breve!</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <!-- PRÓXIMO PASSO 1 -->
+        <div class="bg-techCard border border-l-4 border-l-neonBlue border-gray-800 p-8 rounded-2xl flex items-start space-x-6">
+          <div class="text-neonBlue text-4xl mt-1">
+            <i class="fa-brands fa-apple"></i>
+          </div>
+          <div class="space-y-2">
+            <span class="bg-neonBlue/10 text-neonBlue text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">Especialização Premium</span>
+            <h4 class="text-2xl font-bold">Laboratório Apple Avançado</h4>
+            <p class="text-gray-400">Em breve, laboratório dedicado exclusivamente a reparo de iPhones, iPads, Apple Watches e Macbooks, com microscópio de última geração.</p>
+          </div>
+        </div>
+
+        <!-- PRÓXIMO PASSO 2 -->
+        <div class="bg-techCard border border-l-4 border-l-neonOrange border-gray-800 p-8 rounded-2xl flex items-start space-x-6">
+          <div class="text-neonOrange text-4xl mt-1">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="space-y-2">
+            <span class="bg-neonOrange/10 text-neonOrange text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">Em breve</span>
+            <h4 class="text-2xl font-bold">Manutenção de Computadores</h4>
+            <p class="text-gray-400">Formatação, limpeza preventiva de hardware, substituição de pasta térmica de prata, instalação de SSD de alto desempenho e upgrade completo de PCs.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ / CONTACTO -->
+  <footer id="contato" class="bg-techDark border-t border-gray-800 py-16 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        
+        <!-- COLUNA 1 -->
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full border border-neonBlue flex items-center justify-center text-neonBlue bg-black/30">
+              <i class="fa-solid fa-paw"></i>
+            </div>
+            <span class="font-tech text-lg font-black tracking-widest text-white">TECH BEAR CELL</span>
+          </div>
+          <p class="text-gray-400 text-sm">
+            Cuidando da saúde digital do seu aparelho com rapidez, agilidade e máxima qualidade. Sua confiança é o nosso principal objetivo.
+          </p>
+          <div class="flex space-x-4 text-xl">
+            <a href="#" class="text-gray-400 hover:text-neonBlue transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-neonBlue transition"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://wa.me/5511987654321" class="text-gray-400 hover:text-neonOrange transition"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- COLUNA 2 -->
+        <div class="space-y-4">
+          <h4 class="font-tech text-lg font-bold tracking-wider text-white">CONTATOS</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li class="flex items-center space-x-3">
+              <i class="fa-solid fa-phone text-neonBlue"></i>
+              <span>(11) 98765-4321</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fa-solid fa-envelope text-neonOrange"></i>
+              <span>contato@techbearcell.com.br</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fa-solid fa-clock text-neonBlue"></i>
+              <span>Seg à Sex: 09:00 - 18:00 | Sáb: 09:00 - 13:00</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUNA 3 -->
+        <div class="space-y-4">
+          <h4 class="font-tech text-lg font-bold tracking-wider text-white">ATENDIMENTO LOCAL</h4>
+          <p class="text-sm text-gray-400">
+            Rua da Tecnologia, 123 - Centro<br>
+            Cidade Tecnológica - SP<br>
+            CEP: 01001-000
+          </p>
+          <div class="bg-black/40 border border-gray-800 p-4 rounded-xl text-xs text-center text-neonBlue font-semibold tracking-wider">
+            Consertos em até 1 hora no local!
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DIREITOS AUTORAIS -->
+      <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+        <p>&copy; 2026 Tech Bear Cell. Todos os direitos reservados.</p>
+        <p>Desenvolvido com tecnologia de ponta.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FIXO DO WHATSAPP -->
+  <a href="https://wa.me/5511987654321?text=Ol%C3%A1%21+Vim+do+site+e+gostaria+de+fazer+um+or%C3%A7amento." target="_blank" 
+     class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25d366] text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition duration-300">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- LÓGICA DO SIMULADOR DE PREÇO -->
+  <script>
+    // Configurações do menu mobile
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Seletores de elementos do simulador
+    const brandRadios = document.querySelectorAll('input[name="brand"]');
+    const problemSelect = document.getElementById('problemSelect');
+    const estimatedPriceLabel = document.getElementById('estimatedPrice');
+    const sendWhatsappBtn = document.getElementById('sendWhatsappBtn');
+
+    function calculateEstimate() {
+      // Pega a marca selecionada
+      let selectedBrand = 'Samsung';
+      brandRadios.forEach(radio => {
+        if (radio.checked) {
+          selectedBrand = radio.value;
+          // Estiliza a borda do radio selecionado
+          radio.parentElement.classList.add('border-neonBlue');
+          radio.parentElement.classList.remove('border-gray-800');
+        } else {
+          radio.parentElement.classList.remove('border-neonBlue');
+          radio.parentElement.classList.add('border-gray-800');
+        }
+      });
+
+      // Pega a opção selecionada no dropdown
+      const selectedOption = problemSelect.options[problemSelect.selectedIndex];
+      
+      let price = 0;
+      if (selectedBrand === 'iPhone') {
+        price = parseFloat(selectedOption.getAttribute('data-price-apple'));
+      } else {
+        price = parseFloat(selectedOption.getAttribute('data-price-android'));
+      }
+
+      // Atualiza o valor na interface
+      estimatedPriceLabel.textContent = `R$ ${price.toFixed(2).replace('.', ',')}`;
+    }
+
+    // Adiciona ouvintes para recalcular no clique/mudança
+    brandRadios.forEach(radio => radio.addEventListener('change', calculateEstimate));
+    problemSelect.addEventListener('change', calculateEstimate);
+
+    // Enviar mensagem personalizada para o Whatsapp
+    sendWhatsappBtn.addEventListener('click', () => {
+      let selectedBrand = 'Samsung';
+      brandRadios.forEach(radio => {
+        if (radio.checked) selectedBrand = radio.value;
+      });
+      const selectedProblem = problemSelect.options[problemSelect.selectedIndex].text;
+      const currentPrice = estimatedPriceLabel.textContent;
+      
+      const messageText = `Olá! Vim do simulador da Tech Bear Cell. Gostaria de solicitar o reparo:\n\n*Aparelho:* ${selectedBrand}\n*Defeito:* ${selectedProblem}\n*Valor Estimado:* ${currentPrice}\n\nPodemos agendar a minha assistência?`;
+      const encodedMessage = encodeURIComponent(messageText);
+      
+      // Abre o WhatsApp
+      window.open(`https://wa.me/5511987654321?text=${encodedMessage}`, '_blank');
+    });
+
+    // Calcula inicialmente ao carregar a página
+    calculateEstimate();
+  </script>
+
+</body>
+</html>
